@@ -92,4 +92,36 @@ public class SeminarOverviewController {
             alert.showAndWait();
         }
     }
+
+    /**
+     *  Called when user clicks the new button. Opens a dialog to edit
+     *  details for a new seminar
+     */
+    @FXML
+    private void handleNewSeminar() {
+        Seminar tempSeminar = new Seminar();
+        boolean saveClicked = mainApp.showSeminarEditDialog(tempSeminar);
+        if (saveClicked) {
+            mainApp.getSeminarData().add(tempSeminar);
+        }
+    }
+
+    /**
+     * Called when the user clicks the edit button. Opens a dialog to edit
+     * details for the selected seminar
+     */
+    @FXML
+    private void handleEditSeminar(){
+        Seminar selectedSeminar = seminarTable.getSelectionModel().getSelectedItem();
+        if (selectedSeminar != null) {
+            boolean savedClicked = mainApp.showSeminarEditDialog(selectedSeminar);
+            if (savedClicked) {
+                showSeminarDetails(selectedSeminar);
+            }
+
+        } else {
+            // Nothing selected
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+        }
+    }
 }

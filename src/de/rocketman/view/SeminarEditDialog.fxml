@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.rocketman.view.SeminarEditDialogController">
+   <children>
+      <GridPane layoutX="50.0" layoutY="55.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="20.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.3333740234375" minWidth="10.0" prefWidth="80.6666259765625" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="254.3333740234375" minWidth="10.0" prefWidth="209.3333740234375" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Nummer" />
+            <Label text="Thema" GridPane.rowIndex="1" />
+            <Label text="Ort" GridPane.rowIndex="2" />
+            <Label text="Anzahl Tage" GridPane.rowIndex="3" />
+            <TextField fx:id="nummerField" GridPane.columnIndex="1" />
+            <TextField fx:id="themaField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="ortField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="anzahlTageField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+      <ButtonBar layoutX="85.0" layoutY="146.0" prefHeight="40.0" prefWidth="210.0">
+        <buttons>
+          <Button mnemonicParsing="false" onAction="#handleSave" text="Speichern" />
+            <Button minWidth="50.0" mnemonicParsing="false" onAction="#handleCancel" prefHeight="25.0" text="Abbrechen" />
+        </buttons>
+      </ButtonBar>
+   </children>
+</AnchorPane>
